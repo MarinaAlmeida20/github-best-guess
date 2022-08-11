@@ -10,7 +10,7 @@ This application allows users to enter an arbitrary Github username and be prese
 ## ✨ Demo
 
 <p align="center">
-  <img width="700" align="center" src="/home/marina/Desktop/github-best-guess/src/assets/Screencast from 11-08-22 21:49:17.webm" alt="demo"/>
+  <img width="700" align="center" src="https://github.com/MarinaAlmeida20/github-best-guess/blob/main/src/assets/ezgif.com-gif-maker.gif?raw=true" alt="demo"/>
 </p>
 
 ## Installation
