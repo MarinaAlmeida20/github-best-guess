@@ -3,7 +3,8 @@
 }
 
 .App {
-  background: green;
+  background: #000814;
+  color: #fff;
 	 width: 100%;
 	 display: flex;
    flex-direction: column;
@@ -18,11 +19,12 @@
 .title-site, .content{
   width: 35rem;
   text-align: center;
+  padding-top: 3rem;
 }
 
 .content {
   margin: auto;
-  background-color: #04AA6D;
+  background-color: #003566;
   width: 25rem;
   border-radius: 15px 50px 30px;
   padding: 3rem;
@@ -30,15 +32,17 @@
 
 .search-user input {
   padding: 10px;
-  border: 1px solid rgba(grey, 0.5);
+  border: 1px solid rgba(#003566, 0.5);
   outline: 0;
+  border-radius: 10px 0px 0px 10px;
 }
 
 .search-user button {
   padding: 12px;
-  background-color: #AB0341;
-  color: white;
-  border: 0;
+  background-color: #FFC300;
+  color: #000814;
+  border: #FFC300;
+  border-radius: 0 10px 10px 0;
 }
 
 .user {
