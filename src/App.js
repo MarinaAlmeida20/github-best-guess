@@ -9,7 +9,7 @@ function App() {
   const [repos, setRepos] = useState([]);
   const [language, setLanguage] = useState("");
   const [message, setMessage] = useState("");
-
+  const [errorMsg, setError] = useState("");
 
   // when click submit, this function will run
   function handleSubmit(e) {
@@ -17,7 +17,7 @@ function App() {
     allRepos();
   }
 
-  console.log(repos)
+  // console.log(repos);
 
   // function to get the API
   const allRepos = () => {
@@ -25,20 +25,22 @@ function App() {
     axios({
       method: "get",
       url: `https://api.github.com/users/${username}/repos`,
-    }).then(async (response) => {
-      try {
+    })
+      .then(async (response) => {
         const repos = await response.data;
 
         // all the repos go to the array
         setRepos(repos);
-  
+
         // get the language
         calculateLanguage(repos);
-        
-      } catch (error) {
-        console.error(error);
-      }
-    });
+      })
+      .catch((error) => {
+        console.log(error.response.request.status);
+        if (error.response.request.status === 404) {
+          setError("Sorry :( this user doesn't exist, Please try again!");
+        }
+      });
   };
 
   // function to get the language
@@ -94,9 +96,7 @@ function App() {
       setMessage("I'll show your which language you prefer more");
     }, 1000);
     return () => clearTimeout(timer);
-  }, [username]);
-
-
+  }, [username, repos]);
 
   return (
     <div className="App">
@@ -116,16 +116,20 @@ function App() {
             {loading ? "Searchcing..." : "Search"}
           </button>
         </form>
-        <div className="user">
-          <h1 className="username-greetings">{`Hello ${username}`}</h1>
+        {errorMsg ? (
+          <p className="errorMsg">{errorMsg}</p>
+        ) : (
+          <div className="user">
+            <h1 className="username-greetings">{`Hello ${username}`}</h1>
 
-          {username ? (
-            <h2 className="message">{message}</h2>
-          ) : (
-            <h2>Please enter with an username.</h2>
-          )}
-          <h1 className="language">{language}</h1>
-        </div>
+            {username ? (
+              <h2 className="message">{message}</h2>
+            ) : (
+              <h2>Please enter with an username.</h2>
+            )}
+            <h1 className="language">{language}</h1>
+          </div>
+        )}
       </div>
     </div>
   );

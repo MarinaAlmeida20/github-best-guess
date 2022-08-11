@@ -5,18 +5,19 @@
 .App {
   background: #000814;
   color: #fff;
-	 width: 100%;
-	 display: flex;
-   flex-direction: column;
-	 height: 100vh;
-	 justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
 }
 
 .title-site {
   margin: 0 auto;
 }
 
-.title-site, .content{
+.title-site,
+.content {
   width: 35rem;
   text-align: center;
   padding-top: 3rem;
@@ -39,9 +40,9 @@
 
 .search-user button {
   padding: 12px;
-  background-color: #FFC300;
+  background-color: #ffc300;
   color: #000814;
-  border: #FFC300;
+  border: #ffc300;
   border-radius: 0 10px 10px 0;
 }
 
@@ -63,3 +64,7 @@
   font-size: 4rem;
 }
 
+.errorMsg {
+  color: #ffc300;
+  padding-top: 2rem;
+}
