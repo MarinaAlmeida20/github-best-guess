@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+}
+
+.App {
+  background: green;
+	 width: 100%;
+	 display: flex;
+   flex-direction: column;
+	 height: 100vh;
+	 justify-content: center;
+}
+
+.title-site {
+  margin: 0 auto;
+}
+
+.title-site, .content{
+  width: 35rem;
+  text-align: center;
+}
+
+.content {
+  margin: auto;
+  background-color: #04AA6D;
+  width: 25rem;
+  border-radius: 15px 50px 30px;
+  padding: 3rem;
+}
+
+.search-user input {
+  padding: 10px;
+  border: 1px solid rgba(grey, 0.5);
+  outline: 0;
+}
+
+.search-user button {
+  padding: 12px;
+  background-color: #AB0341;
+  color: white;
+  border: 0;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.username-greetings {
+  padding: 3rem 0;
+}
+
+.message {
+  padding-bottom: 3rem;
+}
+
+.language {
+  font-size: 4rem;
+}
+
