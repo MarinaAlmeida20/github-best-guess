@@ -38,6 +38,7 @@ function App() {
     });
   };
 
+  // function to get the language
   const calculateLanguage = (repos) => {
     let arr = [];
     // get all the languages and put inside the array
