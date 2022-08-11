@@ -17,7 +17,9 @@ function App() {
     allRepos();
   }
 
-  // funciton to get the API
+  console.log(repos)
+
+  // function to get the API
   const allRepos = () => {
     setLoading(true);
     axios({
@@ -26,6 +28,7 @@ function App() {
     }).then(async (response) => {
       try {
         const repos = await response.data;
+
         // all the repos go to the array
         setRepos(repos);
   
@@ -92,6 +95,8 @@ function App() {
     }, 1000);
     return () => clearTimeout(timer);
   }, [username]);
+
+
 
   return (
     <div className="App">
